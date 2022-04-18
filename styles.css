@@ -1,0 +1,102 @@
+body {
+  background-color: #333;
+}
+
+.navbar-container {
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+  max-width: max-content;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 0 1.5rem;
+}
+
+.list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+  padding: 0 1em;
+}
+
+.list .icon {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+
+.list .icon svg {
+  fill: currentColor;
+  height: 2em;
+  width: 2em;
+  display: block;
+}
+
+.list .text {
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out;
+  display: none;
+}
+
+.list .active .text {
+  opacity: 1;
+  pointer-events: all;
+}
+.list .active .icon:hover {
+  transform: translateY(-50%);
+  /* border: 10px solid #333; */
+  transition: 0.9s;
+}
+
+nav {
+  /* height: 50px; */
+}
+
+.list .active .icon:hover::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  /* background-color: hsl(100, 100%, 50%); */
+  background-color: rgb(25, 208, 232);
+  height: 63.98px;
+  width: 63.98px;
+  border-radius: 100%;
+  transform: translate(-25%, -75%);
+}
+
+.list .active .icon:hover::before {
+  display: block;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  /* background-color: rgb(196, 25, 25); */
+  background-color: #333;
+  height: 80.98px;
+  width: 90.98px;
+  border-radius: 100%;
+  top: -8px;
+  right: -12px;
+  transition: all 9s ease-in-out;
+  /* transform: translate(-25%, -75%); */
+}
+
+.active .text {
+  display: none;
+}
+
+.active:hover .text {
+  display: grid;
+  transform: translateY(-10px);
+  font-weight: bolder;
+}
